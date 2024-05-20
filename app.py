@@ -24,9 +24,7 @@ docs = load_docs()
 new_movies = pd.read_csv('./cleaned_csv_3.csv')
 
 st.title("Movie Recommendation System")
-st.write("Find your next favorite movie!")
-
-movie_name = st.text_input("Enter a movie name:")
+movie_name = st.selectbox("Find your next favorite movie!",new_movies["title"].values)
 
 @lru_cache(maxsize=128)
 def get_top_15_indexes(name):
@@ -56,7 +54,7 @@ def fetch_movie_poster(imdb_id, retries=3, delay=2):
             return None
     return None
 
-if movie_name:
+if st.button('recommend') and len(movie_name)!=0 :
     movie_indexes = get_top_15_indexes(movie_name)
     if movie_indexes.size != 0:
         num_per_row = 5
