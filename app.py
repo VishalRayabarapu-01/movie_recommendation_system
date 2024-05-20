@@ -59,7 +59,7 @@ if st.button('Recommend') and len(movie_name)!=0 :
     movie_indexes = get_top_15_indexes(movie_name)
     if movie_indexes.size != 0:
         num_per_row = 5
-        num_rows = 4
+        num_rows = 5
         for i in range(num_rows):
             cols = st.columns(num_per_row)
             for j, col in enumerate(cols):
