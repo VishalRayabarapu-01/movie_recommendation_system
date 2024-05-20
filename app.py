@@ -16,7 +16,7 @@ if st.session_state.loading:
 @st.cache_resource
 def load_docs():
     parts=[]
-    for i in range(3):
+    for i in range(4):
         parts.append(np.load(f'./array_data_{i}.npy'))
     return np.vstack(parts)
 
