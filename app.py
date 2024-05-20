@@ -24,7 +24,7 @@ docs = load_docs()
 new_movies = pd.read_csv('./cleaned_csv_3.csv')
 
 st.title("Movie Recommendation System")
-st.text("Find your next favorite movie!")
+st.write("Find your next favorite movie!")
 movie_name = st.selectbox("",new_movies["title"].values)
 
 @lru_cache(maxsize=128)
