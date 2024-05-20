@@ -8,7 +8,12 @@ import requests
 if 'loading' not in st.session_state:
     st.session_state.loading = True
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Vishal's movie recommendation",
+    page_icon=":rocket:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 if st.session_state.loading:
     st.title("Please wait until the app is ready")
