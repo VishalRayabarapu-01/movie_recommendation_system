@@ -5,18 +5,12 @@ from functools import lru_cache
 import requests
 
 
-if 'loading' not in st.session_state:
-    st.session_state.loading = True
-
 st.set_page_config(
     page_title="Vishal's movie recommendation",
     page_icon=":rocket:",
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
-if st.session_state.loading:
-    st.title("Please wait until the app is ready")
 
 @st.cache_resource
 def load_docs():
@@ -28,8 +22,6 @@ def load_docs():
 docs = load_docs()
 
 new_movies = pd.read_csv('./cleaned_csv_3.csv')
-
-st.session_state.loading = False
 
 st.title("Movie Recommendation System")
 st.write("Find your next favorite movie!")
