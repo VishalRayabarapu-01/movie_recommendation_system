@@ -23,7 +23,7 @@ docs = load_docs()
 
 new_movies = pd.read_csv('./cleaned_csv_3.csv')
 
-st.title("Movie Recommendation System")
+st.title("A Personalised Movie Recommendation System developed by Vishal ")
 st.write("Find your next favorite movie!")
 
 movie_name = st.text_input("Enter a movie name:")
