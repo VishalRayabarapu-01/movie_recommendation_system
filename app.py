@@ -69,7 +69,7 @@ if st.button('Recommend') and len(movie_name)!=0 :
                     imdb_id = new_movies.iloc[movie_indexes[index]]['imdb_id']
                     poster_url = fetch_movie_poster(imdb_id)
                     if poster_url:
-                        col.image(poster_url, caption=movie_title, use_column_width=True)
+                        col.image(poster_url, caption=movie_title, use_container_width=True)
                     else:
                         col.write(f"No poster available for {movie_title}")
     else:
